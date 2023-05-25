@@ -1,0 +1,20 @@
+.form button {
+    display: flex;
+    background-color: rgb(100, 151, 177);
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    padding: 14px 28px;
+}
+
+.btn {
+    display: flex;
+    gap: 20px;
+}
+
+.form button:hover {
+    background-color: rgb(179, 205, 224);
+}
