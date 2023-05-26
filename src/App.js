@@ -14,7 +14,6 @@ function App() {
       <h1>Registration Form</h1>
       <ProgressBar update={(progress) => updateProgress(progress)} />
       <Form
-        //  progress={progress}
         update={(progress) => updateProgress(progress)}
       />
     </div>
