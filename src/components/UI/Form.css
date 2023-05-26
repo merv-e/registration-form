@@ -16,6 +16,10 @@
     gap: 5px;
 }
 
+.form ul{
+    list-style: none;
+}
+
 .form input {
     display: flex;
     /* background-color: #b3cde0; */
