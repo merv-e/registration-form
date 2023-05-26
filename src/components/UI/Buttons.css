@@ -1,6 +1,7 @@
 .form button {
     display: flex;
     background-color: rgb(100, 151, 177);
+    font-family: inherit;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
@@ -15,6 +16,18 @@
     gap: 20px;
 }
 
+.form button:active {
+    transform: scale(0.97);
+}
+
+.form button:focus {
+    outline: 0;
+}
 .form button:hover {
     background-color: rgb(179, 205, 224);
+}
+
+.form button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
 }
