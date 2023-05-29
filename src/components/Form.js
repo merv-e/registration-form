@@ -10,14 +10,12 @@ const Form = props => {
       e.preventDefault();           
     };
 
-    const updateProgress = (progress) => {
-      props.update(progress);
-    };
-
     return (
       <form onSubmit={handleSubmit} className="form">
         <ul>
+        {/* still getting the warning in the console that not giving a child a unique key */}
           {questions
+            .filter((q) => q.progressNo === props.progress)
             .map((question) => (
               <FormInput
                 id={question.id}
@@ -30,7 +28,9 @@ const Form = props => {
             ))}
         </ul>
         <Buttons
-          update={(progress) => updateProgress(progress)}
+          progress={props.progress}
+          next = {props.next}
+          prev = {props.prev}
         />
       </form>
     );

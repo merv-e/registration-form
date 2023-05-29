@@ -5,16 +5,32 @@ import ProgressBar from './components/ProgressBar';
 
 function App() {
 
-  const updateProgress = (progress) => {
-      console.log(progress);
-  };
+   const [progress, setProgress] = useState(1);
+
+   const prev = () => {
+     if (progress >= 1) {
+       setProgress((progress) => progress - 1);
+     }
+   };
+
+   const next = () => {
+     if (progress <= 4) {
+       setProgress((progress) => progress + 1);
+      }
+    };
+    
+    console.log(progress);
 
   return (
     <div className="App">
       <h1>Registration Form</h1>
-      <ProgressBar update={(progress) => updateProgress(progress)} />
+      <ProgressBar 
+       progress={progress}
+      />
       <Form
-        update={(progress) => updateProgress(progress)}
+        progress={progress}
+        prev = {prev}
+        next ={next}
       />
     </div>
   );
