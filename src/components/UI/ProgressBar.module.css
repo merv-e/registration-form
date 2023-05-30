@@ -39,10 +39,14 @@
     top: 50%;
     left: 0;
     height: 4px;
-    width: 0%;
     transform: translateY(-50%);
     z-index: -1;
     transition: .4s ease;
+    /* width: 0%; */
+}
+
+.progress-width{
+    width: 0%;
 }
 
 .circle {
@@ -60,4 +64,10 @@
 
 .circle.active {
     border-color: var(--line-border-fill);
+    background-color:black;
+    color:aqua;
 }
+
+/* .circle.disabled{
+    border-color: var(--line-border-empty);
+} */
