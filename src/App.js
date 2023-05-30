@@ -4,7 +4,6 @@ import Form from './components/Form';
 import ProgressBar from './components/ProgressBar';
 
 function App() {
-
    const [progress, setProgress] = useState(1);
 
    const prev = () => {
@@ -18,8 +17,6 @@ function App() {
        setProgress((progress) => progress + 1);
       }
     };
-    
-    console.log(progress);
 
   return (
     <div className="App">

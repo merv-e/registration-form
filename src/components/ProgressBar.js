@@ -2,45 +2,35 @@ import styles from "./UI/ProgressBar.module.css";
 
 const ProgressBar = props => {
 
-  let currActive = 1;
+  const progressNo = [1, 2, 3, 4];
 
-  const isActive = props.progress === currActive; 
-
-  console.log(isActive);
-
-  console.log(`current active: ${currActive}`);
-  console.log(typeof currActive);
-  console.log(`progress:  ${props.progress}`);
-  console.log(typeof props.progress);
-
-  const progressNum = [1, 2, 3, 4];
-
-
+  // BELOW: depending on the click event(whether it's prev or next), variable "progress" is going to be updated, and so is the activeProgress variable, and then the percentage of the progress will be calculated.)
+  const activeProgress = props.progress - 1;
+  const calculateProgress = (activeProgress / 3) * 100;
 
   return (
     <div className={styles.container}>
       <div className={styles["progress-container"]}>
-        {/*below,  when the second classname "&& styles["progress-width"]" is added, the progressbar becomes different and you see another line on the left side in the progress-bar. */}
-
         {/* The line in between */}
-        <div className={styles.progress} id="progress"></div>
+        <div
+          className={styles.progress}
+          style={{ width: calculateProgress + "%" }}
+          id="progress"
+        ></div>
 
-        {/* {progressNum.map((num) => (
+        {progressNo.map((num) => (
           <div
             key={num}
             id={num}
-            className={`${styles.circle} ${num} === ${props.progress} ? ${styles.active}
-          `}
+            className={styles.circle}
+            style={{
+              borderColor:
+                props.progress >= num && "rgb(100, 151, 177)" 
+            }}
           >
             {num}
           </div>
-        ))} */}
-
-        <div className={styles.progress} id="progress"></div>
-        <div className={`${styles.circle} active? ${styles.active}`}>1</div>
-        <div className={`${styles.circle} active? ${styles.active}`}>2</div>
-        <div className={`${styles.circle} active? ${styles.active}`}>3</div>
-        <div className={`${styles.circle} active? ${styles.active}`}>4</div>
+        ))}
       </div>
     </div>
   );
@@ -48,6 +38,4 @@ const ProgressBar = props => {
 
 export default ProgressBar
 
-// classname "active" is going to change (will be removed in some divs and added in another)
-
-// width of the line classNAme : progress will be changed when pressed next or prev.  in between 1/3 :)
+        
