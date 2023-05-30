@@ -5,7 +5,7 @@ const FormInput = props => {
      key={props.id}
      className="gap">
      {
-        (props.id === "female") && <p>Gender</p>
+        (props.for === "female") && <p>Gender</p>
      }
       <label htmlFor={props.for}>{props.label}</label>
       <input
