@@ -3,20 +3,20 @@ import { questions } from "./helpers";
 const TextInput = (props) => {
   return (
     <div className="alignment">
-    {
+    {/* {
       questions.filter((q) => q.progressNo === props.progress).map((question) => 
       (
-    <>
-        <label htmlFor={question.for}>{question.label}</label>
+    <> */}
+        <label htmlFor={props.for}>{props.label}</label>
         <input
-          id={question.name}
-          type={question.type}
-          placeholder={question.placeholder}
-          value={question.value}
+          id={props.name}
+          type={props.type}
+          placeholder={props.placeholder}
+          value={props.value}
         />
-    </>
+    {/* </>
       ))
-    }
+    } */}
     </div>
   );
 };

@@ -16,15 +16,8 @@ const Form = props => {
       e.preventDefault();           
     };
 
-    const checkbox = questions.filter(q => q.type === "checkbox");
-    const radio = questions.filter(q => q.type === "radio");
-
     // {/* still getting the warning in the console that not giving a child a unique key */}
-
-      const isRadioOrCheckbox = questions.filter(
-        (q) => q.type === "checkbox" || q.type === "radio"
-      );
-
+    
     return (
       <form onSubmit={handleSubmit} className="form">
         <ul>
@@ -61,6 +54,11 @@ export default Form
 // <p>{props.type === "radio" && "Gender"}</p>
 
 
+    // const checkbox = questions.filter(q => q.type === "checkbox");
+    // const radio = questions.filter(q => q.type === "radio");
+      // const isRadioOrCheckbox = questions.filter(
+      //   (q) => q.type === "checkbox" || q.type === "radio"
+      // );
 
 
 
