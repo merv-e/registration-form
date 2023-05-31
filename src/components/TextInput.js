@@ -1,16 +1,24 @@
+import { questions } from "./helpers";
 
-const TextInput = props => {
+const TextInput = (props) => {
   return (
     <div className="alignment">
-      <label htmlFor={props.for}>{props.label}</label>
-      <input
-        id={props.name}
-        type={props.type}
-        placeholder={props.placeholder}
-        value={props.value}
-      />
+    {
+      questions.filter((q) => q.progressNo === props.progress).map((question) => 
+      (
+    <>
+        <label htmlFor={question.for}>{question.label}</label>
+        <input
+          id={question.name}
+          type={question.type}
+          placeholder={question.placeholder}
+          value={question.value}
+        />
+    </>
+      ))
+    }
     </div>
   );
-}
+};
 
-export default TextInput
+export default TextInput;

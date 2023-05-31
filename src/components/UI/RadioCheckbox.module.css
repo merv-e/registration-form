@@ -1,32 +1,25 @@
-.container {
-    /* background-color: wheat; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    background-color: pink;
-    border: blue 2px;
-    width: auto;
-    height: 20vh;
-    text-align: left;
-}
-
-.container2 {
-    display: flex;
-    display: inline-flex;
-    gap: 20px;
-    line-height: normal;
-}
-
-.align-left {
-    display: flex;
-    /* background-color: aquamarine; */
-    text-align: left;
-    /* flex-direction: column; */
-}
-
 .big-container {
-    /* background-color: black;
-    padding: 5px;
-    margin: 5px; */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
 }
+
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+.inner-container{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 5px;
+}
+
+/* .inner-container input[type=radio]:focus{
+    background-color: aqua;
+    color: blue;
+    transform: scale(1);
+    background: blue;
+} */

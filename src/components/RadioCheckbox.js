@@ -1,24 +1,14 @@
 import styles from "./UI/RadioCheckbox.module.css";
 
 const RadioCheckbox = props => {
-  console.log(props);
+  // console.log(props);
 
   return (
-    <div className={styles.container2}>
-      <div>
-      {/* Burada questions'daki verileri render etsin istiyoruz. */}
-        <input 
-          id={props.id}  
-          type={props.type} 
-          value={props.value} 
-          />
-        <label 
-         htmlFor={props.for} 
-        >{props.label}
-        </label>
-      </div>
+    
+    <div className={styles["inner-container"]}>
+      <input id={props.id} type={props.type} name={props.name} value={props.value} />
+      <label htmlFor={props.for}>{props.label}</label>
     </div>
-
   );
 }
 

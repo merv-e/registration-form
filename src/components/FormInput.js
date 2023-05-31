@@ -2,19 +2,19 @@ import RadioCheckbox from "./RadioCheckbox";
 import TextInput from "./TextInput";
 import styles from "./UI/RadioCheckbox.module.css";
 
+
+// Su anda bu component devredisi birakildi.
 const FormInput = props => {
 
   const isRadioOrCheckbox = 
     props.type === "radio" || props.type === "checkbox";
 
-
   return (
     <li key={props.id}>
-      
-      <div className={isRadioOrCheckbox && styles["big-container"]}>
-        <div className={isRadioOrCheckbox && styles.container}>
-          <p>{props.type === "checkbox" && "Language"}</p>
-          <p>{props.type === "radio" && "Gender"}</p>
+      {/* <div className={isRadioOrCheckbox && styles["big-container"]}>
+        <p>{props.type === "radio" && "Gender"}</p>
+        <p>{props.type === "checkbox" && "Language"}</p>
+        <div className={isRadioOrCheckbox && styles.container}> */}
 
           {isRadioOrCheckbox ? (
             <RadioCheckbox
@@ -35,8 +35,8 @@ const FormInput = props => {
               value={props.value}
             />
           )}
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
     </li>
   );
 }
