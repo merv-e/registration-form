@@ -1,0 +1,32 @@
+.container {
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: pink;
+    border: blue 2px;
+    width: auto;
+    height: 20vh;
+    text-align: left;
+}
+
+.container2 {
+    display: flex;
+    display: inline-flex;
+    gap: 20px;
+    line-height: normal;
+}
+
+.align-left {
+    display: flex;
+    /* background-color: aquamarine; */
+    text-align: left;
+    /* flex-direction: column; */
+}
+
+.big-container {
+    /* background-color: black;
+    padding: 5px;
+    margin: 5px; */
+}

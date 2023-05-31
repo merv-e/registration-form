@@ -1,8 +1,7 @@
 import "./UI/Form.css";
-import React, { useState } from 'react';
-import {questions} from "./helpers"
 import Buttons from './Buttons';
 import FormInput from './FormInput';
+import {questions} from "./helpers"
 
 const Form = props => {
 
