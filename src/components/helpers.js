@@ -17,6 +17,7 @@ export const questions = [
     type: "text",
     placeholder: "Your Surname",
     progressNo: 1,
+    value: "",
   },
   {
     id: 3,

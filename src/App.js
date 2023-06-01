@@ -4,7 +4,10 @@ import Form from './components/Form';
 import ProgressBar from './components/ProgressBar';
 
 function App() {
-   const [progress, setProgress] = useState(1);
+  
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [progress, setProgress] = useState(1);
 
    const prev = () => {
      if (progress >= 1) {
@@ -18,17 +21,35 @@ function App() {
       }
     };
 
+    // the input should be reset to "".
+    const registrationCompleted = () => {
+      // setIsSubmitted(true); 
+      console.log("A new page will be shown");
+    };
+
+
+
   return (
     <div className="App">
-      <h1>Registration Form</h1>
-      <ProgressBar 
-       progress={progress}
-      />
-      <Form
-        progress={progress}
-        prev = {prev}
-        next ={next}
-      />
+      {
+        isSubmitted ? (
+          <div>
+            <h2 className="successful-registration">
+            Successfully registered!
+            </h2>
+          </div>
+        ) : (
+          <>
+            <h1>Registration Form</h1>
+              <ProgressBar progress={progress} />
+              <Form
+                registrationCompleted={registrationCompleted}
+                progress={progress}
+                prev={prev}
+                next={next}
+              />
+          </>
+      ) }
     </div>
   );
 }

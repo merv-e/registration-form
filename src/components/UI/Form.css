@@ -35,3 +35,8 @@
     border-radius: 10px;
     padding: 14px 28px;
 }
+
+.successful-registration{
+    /* border */
+    height: 100vh;
+}

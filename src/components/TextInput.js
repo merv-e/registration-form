@@ -3,28 +3,7 @@ import { questions } from "./helpers";
 
 const TextInput = (props) => {
    
-  // Todo : password confirmation logic ==> const validation = question.type === "password"
-
-  const [formData, setFormData] = useState({
-    name: "",
-    surname: "",
-    country: "",
-    occupation: "",
-    // gender: "",
-    // language: "", 
-    email_address: "",
-    phone_number: "",
-    website: "",
-    password: "",
-  }); 
-
-  const handleInput = (e) => {
-    setFormData(prev => { 
-      return {...prev, [e.target.name]: e.target.value} 
-    });
-  };
-  
-console.log(formData); 
+  // Todo : password confirmation logic
 
   return (
     <ul className="alignment">
@@ -38,8 +17,8 @@ console.log(formData);
           id={question.name}
           type={question.type}
           placeholder={question.placeholder}
-          onChange={handleInput}
-          required
+          onChange={props.updateValues}
+          // required
         />
       </li>
       ))

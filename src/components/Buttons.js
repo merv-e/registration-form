@@ -25,6 +25,7 @@ const Buttons = props => {
           <button
             type="submit"
             className="register-btn"
+            onClick = {props.handleSubmit}
           >Register   
           </button>
       )
