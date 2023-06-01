@@ -10,8 +10,8 @@ const TextInput = (props) => {
     surname: "",
     country: "",
     occupation: "",
-    gender: "",
-    language: "",
+    // gender: "",
+    // language: "", 
     email_address: "",
     phone_number: "",
     website: "",
@@ -24,7 +24,7 @@ const TextInput = (props) => {
     });
   };
   
-console.log(formData);
+console.log(formData); 
 
   return (
     <ul className="alignment">
@@ -34,14 +34,12 @@ console.log(formData);
       <li key={question.id}>
         <label htmlFor={question.for}>{question.label}</label>
         <input
-          key={question.id}
           name={question.name}
           id={question.name}
           type={question.type}
           placeholder={question.placeholder}
-          // value={} 
           onChange={handleInput}
-          // required
+          required
         />
       </li>
       ))

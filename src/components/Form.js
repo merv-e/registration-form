@@ -2,6 +2,8 @@ import "./UI/Form.css";
 import FormInput from './FormInput';
 import Buttons from './Buttons';
 
+import TextInput from "./TextInput";
+
 const Form = props => {
     const handleSubmit = (e) => {
       e.preventDefault();           
@@ -9,11 +11,10 @@ const Form = props => {
 
     // Todo: 
     // 1 -form values to be saved. 
-    // 2 - a list element (li) will be added with a key.  
 
     return (
       <form onSubmit={handleSubmit} className="form">
-        <FormInput progress = {props.progress} />
+        <TextInput progress = {props.progress} />
         <Buttons
           progress={props.progress}
           next={props.next}
