@@ -25,7 +25,6 @@ npm i
 `npm start`
 
 
-<br>
 ### Technologies used in this project: 
 
 ```
