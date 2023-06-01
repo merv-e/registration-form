@@ -7,6 +7,7 @@ export const questions = [
     type: "text",
     placeholder: "Your Name",
     progressNo: 1,
+    value: "",
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ export const questions = [
     type: "text",
     placeholder: "Your Country",
     progressNo: 1,
+    value: "",
   },
   {
     id: 4,
@@ -34,11 +36,12 @@ export const questions = [
     type: "text",
     placeholder: "Your Occupation",
     progressNo: 1,
+    value: "",
   },
 
   {
-    // id: 5,
-    name: "Gender",
+    id: "gender",
+    question_name: "Gender",
     progressNo: 2,
     values: [
       {
@@ -47,6 +50,7 @@ export const questions = [
         label: "Female",
         type: "radio",
         value: "Female",
+        name: "female",
       },
       {
         id: 6,
@@ -54,13 +58,14 @@ export const questions = [
         label: "male",
         type: "radio",
         value: "Male",
-      }
-    ]
+        name: "male",
+      },
+    ],
   },
 
   {
-    // id: 8,
-    name: "Language",
+    id: "language",
+    question_name: "Language",
     progressNo: 2,
     values: [
       {
@@ -69,6 +74,7 @@ export const questions = [
         label: "English",
         type: "checkbox",
         value: "english",
+        name: "english",
       },
       {
         id: 8,
@@ -76,6 +82,7 @@ export const questions = [
         label: "Spanish",
         type: "checkbox",
         value: "spanish",
+        name: "spanish",
       },
       {
         id: 9,
@@ -83,8 +90,9 @@ export const questions = [
         label: "Others",
         type: "checkbox",
         value: "others",
+        name: "others",
       },
-    ]
+    ],
   },
 
   {
@@ -95,6 +103,7 @@ export const questions = [
     type: "email",
     placeholder: "Your E-mail Address ",
     progressNo: 3,
+    value: "",
   },
   {
     id: 11,
@@ -102,8 +111,9 @@ export const questions = [
     for: "phone",
     label: "Phone Number",
     type: "number",
-    placeholder: "Your Phone Number",
+    placeholder: " Phone Number",
     progressNo: 3,
+    value: "",
   },
   {
     id: 12,
@@ -113,6 +123,7 @@ export const questions = [
     type: "website",
     placeholder: "Your Website Name",
     progressNo: 3,
+    value: "",
   },
   {
     id: 13,
@@ -122,14 +133,16 @@ export const questions = [
     type: "password",
     placeholder: "Type a password",
     progressNo: 4,
+    value: "",
   },
-  {
-    id: 14,
-    name: "password",
-    for: "password",
-    type: "password",
-    placeholder: "Confirm your password",
-    progressNo: 4,
-  },
+  // {
+  //   id: 14,
+  //   name: "password",
+  //   for: "password",
+  //   type: "password",
+  //   placeholder: "Confirm your password",
+  //   progressNo: 4,
+  //   // value: "",
+  // },
 ];
   

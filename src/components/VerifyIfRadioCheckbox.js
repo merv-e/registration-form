@@ -8,8 +8,8 @@ const VerifyIfRadioCheckbox = (props) => {
         .filter((q) => q.progressNo === props.progress)
         .map((question) => (
           <RadioCheckbox
-            id={question.id}
-            name={question.name}
+            key={question.id}
+            qname={question.question_name}
             progressNo={question.progressNo}
             values={question.values}
           />

@@ -13,9 +13,7 @@ const Form = props => {
 
     return (
       <form onSubmit={handleSubmit} className="form">
-        <ul>
-          <FormInput progress = {props.progress} />
-        </ul>
+        <FormInput progress = {props.progress} />
         <Buttons
           progress={props.progress}
           next={props.next}
