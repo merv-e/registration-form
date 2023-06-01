@@ -1,22 +1,27 @@
 import { questions } from "./helpers";
 
 const TextInput = (props) => {
+   
+  // Todo : password confirmation logic
+
   return (
     <div className="alignment">
-    {/* {
+    {
       questions.filter((q) => q.progressNo === props.progress).map((question) => 
       (
-    <> */}
-        <label htmlFor={props.for}>{props.label}</label>
+    <>
+        <label htmlFor={props.for}>{question.label}</label>
         <input
-          id={props.name}
-          type={props.type}
-          placeholder={props.placeholder}
-          value={props.value}
+          key={question.id}
+          id={question.name}
+          type={question.type}
+          placeholder={question.placeholder}
+          value={question.value}
+          required
         />
-    {/* </>
+    </>
       ))
-    } */}
+    }
     </div>
   );
 };
