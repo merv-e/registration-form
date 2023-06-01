@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    /* height: 50vh; */
     text-align: left;
     padding-top: 20px;
     font-size: 16px;
@@ -12,51 +11,27 @@
 
 .form ul{
     list-style: none;
-    /* gap: 50px; */
-}
-
-/* Asagidaki Css ayari ile gender kismindakiler  yanyana hale getirilebilirken bu sefer ilk sayfadakilerin ayari da sasiyor.*/
-
-/* ul:not(.alignment){
-    display: flex;
-} */
-
-.form li{
-    display: flex;
-    gap: 50px;
 }
 
 .alignment{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
 
-.alignment-for-radio-and-checkboxes{
+.alignment li{
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
 .form input {
     display: flex;
-    /* background-color: #b3cde0; */
     text-align: left;
     border: 2px rgb(179, 205, 224) solid;
     width: 100%;
     border-radius: 10px;
     padding: 14px 28px;
 }
-
-/* .radio-checkbox{
-    display: flex;
-} */
-
-/* .options-for-radio-checkbox {
-    
-}
-
-.options-for-radio-checkbox::before {
-    content: "gender";
-} */
