@@ -1,4 +1,5 @@
 import "./UI/Form.css";
+
 import FormInput from './FormInput';
 import Buttons from './Buttons';
 
@@ -44,7 +45,7 @@ const Form = props => {
 
     // Todo: 
     // 1 -form values should be saved. 
-    // 2- when prev is clicked- form values are vanishing --- it can be seen in the console.log but not on the screen.
+    // 2- when prev is clicked- form values are vanishing --- it can be seen in the console.log but not in the input fields.
 
     return (
       <form onSubmit={handleSubmit} className="form">

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { questions } from "./helpers";
 
 const TextInput = (props) => {
