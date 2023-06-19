@@ -35,6 +35,7 @@ const ProgressContextProvider = props => {
     prev: prev,
     next: next,
     onSubmit: setIsSubmitted,
+    isSubmitted: isSubmitted,
   }}
   >
     {props.children}

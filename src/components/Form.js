@@ -1,62 +1,47 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useReducer } from "react";
 import "./UI/Form.css";
 
 import Buttons from './Buttons';
 import Input from "./Input";
+
+import { reducer, initState } from "./reducer/reducer";
 import { ProgressContext } from "./store/progress-context";
 
 const Form = () => {
+  
+/*   
+  TODOS:
+    - reset values after form is submitted and implement useReducer instead of useState
+
+    - validity such as the "required" field should be dealt with.
+    - when prev is clicked- form values are vanishing --- it can be seen in the console.log but not in the input fields. 
+  */
+
+  
+  // Context API has our initial data and instead of using props we are sending the data across the app by using context (note that, this can not replace useState!).
+
   const ctx = useContext(ProgressContext);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    surname: "",
-    country: "",
-    occupation: "",
-    // gender: "",
-    // language: "",
-    email: "",
-    phone: "",
-    website: "",
-    password: "",
-  });
+  const [formState, dispatch] = useReducer(reducer, initState);
 
-  // Todo:
-
-  // - validity such as the "required" field should be dealt with.
-
-  // - when prev is clicked- form values are vanishing --- it can be seen in the console.log but not in the input fields.
+  const updateValues = (e) => {
+    dispatch({
+      type: "HANDLE_INPUT",
+      field: e.target.name,
+      payload: e.target.value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted!");
-
-    // function below that is supposed to reset the values doesn't work.
-
-    setFormData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: "",
-      };
-    });
-
+    
     ctx.onSubmit(true);
   };
 
-  const updateValues = (e) => {
-    setFormData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: e.target.value,
-      };
-    });
-
-    console.log("values are updated");
-  };
-
   useEffect(() => {
-    console.log(formData);
-  }, [formData]);
+    console.log(formState);
+  }, [formState]);
 
   return (
     <div id="form1" className="form">
