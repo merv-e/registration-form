@@ -1,19 +1,13 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import './App.css';
 
 import Form from './components/Form';
 import ProgressBar from './components/ProgressBar';
-
-import ProgressContextProvider, { ProgressContext } from './components/store/progress-context';
+import { ProgressContext } from './components/store/progress-context';
 
 function App() {
 
   const ctx = useContext(ProgressContext);
-
-    // useEffect(() => {
-    //   console.log(ctx);
-
-    // }, [ctx]); 
 
   return (
     <div className="App">

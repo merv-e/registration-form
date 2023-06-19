@@ -4,7 +4,6 @@ import React, {
   } from "react";
 
 export const ProgressContext =
-  // React.
   createContext({
     progress: "",
     prev: "",
@@ -35,7 +34,6 @@ const ProgressContextProvider = props => {
     progress: progress, 
     prev: prev,
     next: next,
-    isSubmitted: isSubmitted, 
     onSubmit: setIsSubmitted,
   }}
   >

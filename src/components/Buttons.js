@@ -9,7 +9,9 @@ const Buttons = props => {
 
   return (
     <div className="btn">
-        <button 
+        <button
+          id="1"
+          form="form1" 
           type="text"
           onClick={ctx.prev}
           disabled={ctx.progress === 1}
@@ -18,7 +20,8 @@ const Buttons = props => {
     {
       ctx.progress !== 4 
       ? (
-          <button 
+          <button
+            id="2" 
             type="text"
             onClick={ctx.next}
             disabled={ctx.progress === 4}
@@ -28,6 +31,7 @@ const Buttons = props => {
       )
       : (
           <button
+            id="3"
             type="submit"
             className="register-btn"
             onClick = {props.handleSubmit}

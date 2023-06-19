@@ -6,60 +6,61 @@ import Input from "./Input";
 import { ProgressContext } from "./store/progress-context";
 
 const Form = () => {
+  const ctx = useContext(ProgressContext);
 
-    const ctx = useContext(ProgressContext);
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    country: "",
+    occupation: "",
+    // gender: "",
+    // language: "",
+    email: "",
+    phone: "",
+    website: "",
+    password: "",
+  });
 
-    const [formData, setFormData] = useState({
-      name: "",
-      surname: "",
-      country: "",
-      occupation: "",
-      // gender: "",
-      // language: "",
-      email: "",
-      phone: "",
-      website: "",
-      password: "",
-    }); 
+  // Todo:
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Form submitted!");
+  // - validity such as the "required" field should be dealt with.
 
-      // setFormData((prev) => {
-      //   return { 
-      //     ...prev, 
-      //     [e.target.name]: "" 
-      //   };
+  // - when prev is clicked- form values are vanishing --- it can be seen in the console.log but not in the input fields.
 
-      // }); 
-      
-      // ctx.onSubmit(true); 
-    
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted!");
 
-    const updateValues = (e) => {
-      setFormData((prev) => {
-        return { 
-          ...prev, 
-          [e.target.name]: e.target.value 
-        };
-      });
-      
-      console.log("values are updated");
-    };
+    // function below that is supposed to reset the values doesn't work.
 
-    // useEffect(() => {
-    //   console.log(formData); 
- 
-    // }, [formData ]);
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: "",
+      };
+    });
 
-    // Todo: 
-    // 1 -form values should be saved. 
-    // 2- when prev is clicked- form values are vanishing --- it can be seen in the console.log but not in the input fields.
+    ctx.onSubmit(true);
+  };
 
-    return (
-      <form onSubmit={handleSubmit} className="form">
+  const updateValues = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+
+    console.log("values are updated");
+  };
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
+  return (
+    <div id="form1" className="form">
+      <div className="alignment">
         <Input
           id="1"
           name="name"
@@ -70,9 +71,11 @@ const Form = () => {
           progressNo="1"
           progress={ctx.progress}
           updateValues={updateValues}
+          required
         />
 
         <Input
+          required
           id="2"
           name="surname"
           for="surname"
@@ -85,6 +88,7 @@ const Form = () => {
         />
 
         <Input
+          required
           id="3"
           name="occupation"
           for="occupation"
@@ -97,6 +101,7 @@ const Form = () => {
         />
 
         <Input
+          required
           id="4"
           name="country"
           for="country"
@@ -108,9 +113,8 @@ const Form = () => {
           updateValues={updateValues}
         />
 
-        {/* IMPORTANT NOTE: Input id's 5 to 9 are not going to be used for now. */}
-
         <Input
+          required
           id="10"
           name="email"
           for="email"
@@ -123,6 +127,7 @@ const Form = () => {
         />
 
         <Input
+          required
           id="11"
           name="phone"
           for="phone"
@@ -147,6 +152,7 @@ const Form = () => {
         />
 
         <Input
+          required
           id="13"
           name="password"
           for="password"
@@ -157,90 +163,10 @@ const Form = () => {
           progress={ctx.progress}
           updateValues={updateValues}
         />
-
-        <Buttons handleSubmit={handleSubmit}/>
-      </form>
-    );
+      </div>
+      <Buttons handleSubmit={handleSubmit} />
+    </div>
+  );
 }
 
 export default Form    
-
-//  <Input
-        //   id="5"
-        //   name=""
-        //   for=""
-        //   label=""
-        //   type="radio"
-        //   // placeholder="Your "
-        //   // progressNo="2"
-        //   progress={ctx.progress}
-        //   value=""
-        // updateValues={updateValues}
-        // />
-
-        // <Input
-        //   id="6"
-        //   name=""
-        //   for=""
-        //   label=""
-        //   type="radio"
-        //   // placeholder="Your "
-        //   // progressNo="2"
-        //   progress={ctx.progress}
-        //   value=""
-        // />
-
-        // <Input
-        //   id="7"
-        //   name=""
-        //   for=""
-        //   label=""
-        //   type="checkbox"
-        //   // placeholder="Your "
-        //   // progressNo="2"
-        //   progress={ctx.progress}
-        //   value=""
-        // />
-
-        // <Input
-        //   id="8"
-        //   name=""
-        //   for=""
-        //   label=""
-        //   type="checkbox"
-        //   // placeholder="Your "
-        //   // progressNo="2"
-        //   progress={ctx.progress}
-        //   value=""
-        // />
-
-        // <Input
-        //   id="9"
-        //   name=""
-        //   for=""
-        //   label=""
-        //   type="checkbox"
-        //   // placeholder="Your "
-        //   // progressNo="2"
-        //   progress={ctx.progress}
-        //   value=""
-        // />
-
-        /* 
-        CONFIRM PASSWORD 
-        */
-
-        //         {
-        //           /* <Input
-        //   id="14"
-        //   name="password"
-        //   for="password"
-        //   label="Password"
-        //   type="password"
-        //   placeholder="Confirm password"
-        //   progressNo="4"
-        //   progress={ctx.progress}
-     
-        //   updateValues={updateValues}
-        // /> */
-        //         }
