@@ -1,22 +1,27 @@
+import { useContext } from "react";
 import "./UI/Buttons.css";
 
+import { ProgressContext } from "./store/progress-context";
+
 const Buttons = props => {
+
+  const ctx = useContext(ProgressContext);
 
   return (
     <div className="btn">
         <button 
           type="text"
-          onClick={props.prev}
-          disabled={props.progress === 1}
+          onClick={ctx.prev}
+          disabled={ctx.progress === 1}
         >Prev
         </button>
     {
-      props.progress !== 4 
+      ctx.progress !== 4 
       ? (
           <button 
             type="text"
-            onClick={props.next}
-            disabled={props.progress === 4}
+            onClick={ctx.next}
+            disabled={ctx.progress === 4}
           >
             Next
           </button>

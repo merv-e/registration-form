@@ -1,38 +1,24 @@
-import { useState } from 'react';
+import { useContext, useEffect } from 'react';
 import './App.css';
+
 import Form from './components/Form';
 import ProgressBar from './components/ProgressBar';
 
+import ProgressContextProvider, { ProgressContext } from './components/store/progress-context';
+
 function App() {
-  
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const [progress, setProgress] = useState(1);
+  const ctx = useContext(ProgressContext);
 
-   const prev = () => {
-     if (progress >= 1) {
-       setProgress((progress) => progress - 1);
-     }
-   };
+    // useEffect(() => {
+    //   console.log(ctx);
 
-   const next = () => {
-     if (progress <= 4) {
-       setProgress((progress) => progress + 1);
-      }
-    };
-
-    // the input should be reset to "".
-    const registrationCompleted = () => {
-      // setIsSubmitted(true); 
-      console.log("A new page will be shown");
-    };
-
-
+    // }, [ctx]); 
 
   return (
     <div className="App">
       {
-        isSubmitted ? (
+        ctx.isSubmitted ? (
           <div>
             <h2 className="successful-registration">
             Successfully registered!
@@ -41,13 +27,8 @@ function App() {
         ) : (
           <>
             <h1>Registration Form</h1>
-              <ProgressBar progress={progress} />
-              <Form
-                registrationCompleted={registrationCompleted}
-                progress={progress}
-                prev={prev}
-                next={next}
-              />
+              <ProgressBar />
+              <Form />
           </>
       ) }
     </div>

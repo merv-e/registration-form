@@ -1,11 +1,17 @@
 import styles from "./UI/ProgressBar.module.css";
 
-const ProgressBar = props => {
+import { useContext } from "react";
+import { ProgressContext } from "./store/progress-context";
+
+const ProgressBar = () => {
 
   const progressNo = [1, 2, 3, 4];
 
   // BELOW: depending on the click event(whether it's prev or next), variable "progress" is going to be updated, so is the activeProgress variable, and then the percentage of the progress will be calculated.)
-  const activeProgress = props.progress - 1;
+
+  const ctx = useContext(ProgressContext);
+  
+  const activeProgress = ctx.progress - 1;
   const calculateProgress = (activeProgress / 3) * 100;
 
   return (
@@ -26,7 +32,7 @@ const ProgressBar = props => {
             className={styles.circle}
             style={{
               borderColor:
-                props.progress >= num && "rgb(100, 151, 177)" 
+                ctx.progress >= num && "rgb(100, 151, 177)" 
             }}
           >
             {num}
