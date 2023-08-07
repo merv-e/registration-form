@@ -1,18 +1,12 @@
-import React, {
-  createContext, 
-  useState, 
-  } from "react";
+import { createContext, useState } from "react";
 
-export const ProgressContext =
-  createContext({
-    progress: "",
-    prev: "",
-    next: "",
-  }); 
+export const ProgressContext = createContext({
+  progress: "",
+  prev: "",
+  next: "",
+});
 
-
-const ProgressContextProvider = props => {
-  
+const ProgressContextProvider = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [progress, setProgress] = useState(1);
@@ -29,17 +23,19 @@ const ProgressContextProvider = props => {
     }
   };
 
-  return <ProgressContext.Provider value=
-  {{
-    progress: progress, 
-    prev: prev,
-    next: next,
-    onSubmit: setIsSubmitted,
-    isSubmitted: isSubmitted,
-  }}
-  >
-    {props.children}
-  </ProgressContext.Provider>
-}
+  return (
+    <ProgressContext.Provider
+      value={{
+        progress,
+        prev,
+        next,
+        onSubmit: setIsSubmitted,
+        isSubmitted: isSubmitted,
+      }}
+    >
+      {props.children}
+    </ProgressContext.Provider>
+  );
+};
 
 export default ProgressContextProvider;
